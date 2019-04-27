@@ -1,0 +1,6 @@
+[submodule "packages/accounts-ui"]
+	url = https://github.com/ensemblebd/accounts-ui.git
+[submodule "packages/accounts-material-ui"]
+	path = packages/accounts-material-ui
+	url = https://github.com/ensemblebd/accounts-material-ui.git
+    branch = master

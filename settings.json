@@ -1,0 +1,12 @@
+{
+  "public": {
+    "this_is_available_to_client": 1,
+    "BACKEND_URL": "http://localhost:3000",
+    "dev": {
+      "forceMobileInDev": false
+    }
+  },
+  "private": {
+    "onlyavailable_on_server": 1
+  }
+}

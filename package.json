@@ -1,0 +1,72 @@
+{
+  "name": "eg-meteor-react-boilerplate",
+  "version": "1.0.0",
+  "description": "Meteor React Boilerplate by Ensemble Group",
+  "main": "index.js",
+  "scripts": {
+    "test": ".\\buildrun\\test.bat",
+    "test-unix": "./buildrun/test.sh",
+    "start": ".\\buildrun\\start.bat",
+    "dev": ".\\buildrun\\dev.bat",
+    "dev android": ".\\buildrun\\dev-android.bat",
+    "dev ios": ".\\buildrun\\dev-ios.bat",
+    "build-win": ".\\buildrun\\build.bat",
+    "build-unix": "./buildrun/build.sh",
+    "build-mobile": ".\\buildrun\\build-mobile.bat",
+    "build-mobile-unix": ".\\buildrun\\build-mobile.sh",
+    "deploy-galaxy": ".\\buildrun\\deploy-galaxy.bat"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ensemblebd/meteor-react-boilerplate-devops"
+  },
+  "author": "My Company <webmaster@mycompany.com> (https://mycompany.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ensemblebd/meteor-react-boilerplate-devops/issues"
+  },
+  "homepage": "https://mycompany.com",
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "bcrypt": "^1.0.3",
+    "classnames": "^2.2.5",
+    "es6-object-assign": "~1.1.0",
+    "history": "^3.3.0",
+    "jquery": "^3.2.1",
+    "keymaster": "^1.6.2",
+    "lodash": "^4.17.4",
+    "material-ui": "^0.19.4",
+    "material-ui-search-bar": "^0.4.1",
+    "meteor-node-stubs": "^0.3.2",
+    "pathwatcher": "^8.0.2",
+    "postmark": "^1.5.0",
+    "prop-types": "^15.6.0",
+    "react": "^15.6.2",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "react-fastclick": "^3.0.2",
+    "react-fittext": "git+https://github.com/ensemblebd/react-fittext.git",
+    "react-form-validator-core": "^0.4.1",
+    "react-grid-layout": "^0.16.1",
+    "react-image": "^1.3.1",
+    "react-material-ui-form-validator": "^1.0.7",
+    "react-popup": "^0.9.1",
+    "react-preloaded": "^1.0.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-page-transition": "^3.0.2",
+    "react-router-with-props": "^0.1.1",
+    "react-slick": "^0.16.0",
+    "react-stepzilla": "^4.7.0",
+    "react-table": "^6.7.6",
+    "react-tap-event-plugin": "^2.0.1",
+    "reactionic": "^1.1.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.2",
+    "eslint": "^4.11.0",
+    "eslint-config-defaults": "^9.0.0",
+    "eslint-plugin-filenames": "^1.2.0",
+    "eslint-plugin-react": "^7.5.1"
+  }
+}

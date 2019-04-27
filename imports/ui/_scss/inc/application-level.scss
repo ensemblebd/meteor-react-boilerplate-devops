@@ -1,0 +1,387 @@
+
+// root elements needs 100% height, so that we can utilize flex containers appropriately (if they don't have full real estate of viewport, we can't determine percentage heights responsively).
+html, body, .row, #app, #app > div[data-reactroot], div[data-reactroot] > div:not(.fixed-tl):not(.v-center) {
+  height: 100%;
+  margin: 0;
+}
+body {
+  font-family: 'Work Sans', sans-serif;
+}
+
+body:not(.is-logged-in), body:not(.is-loaded) {
+  #app > div[data-reactroot] {
+    color: white !important;
+    background-color: #222a3a!important;
+  }
+}
+
+body.is-loaded {
+  .logo-container.fixed-tl {
+    position:relative !important;
+
+  }
+  #app > div[data-reactroot] > div:last-child {
+    height: calc(100% - 96px);
+  }
+}
+
+p {
+  margin: 0;
+}
+
+// non-fixed container div inside app root should have higher visibility than the background overlay (underlay now). Also remove any overflow to prevent scrollbars (depending on aspect ratio, they can be added due to flex containers margin and padding.. the sizing is still right, but the gap created by scrollbar look bad).
+#app > div[data-reactroot] > div:not(.fixed-tl) {
+  z-index: 1;
+  overflow-x:hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+// Let's force all rows to center their content in the allotted region it resides (vertical auto centering based on contents height).
+.main-content:not(.is-desktop) {
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+// the router switch writes a div, and the div isn't full width.
+.main-content.is-desktop > .row > div {
+  width: 100%;
+}
+
+Header a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+Header a, #login-buttons a {
+  text-decoration: none;
+  margin-right: 10px;
+  color:inherit;
+}
+a.button {
+  padding: 6px 12px;
+  border: solid 1px black;
+  border-radius: 8px;
+  box-shadow: 3px 2px 1px black;
+}
+
+.bg-default {
+  background-color: #222a3a;
+}
+.bg-secondary {
+  background-color: #f97a66;
+}
+.full-screen {
+  width:100%;
+  height:100%;
+}
+.fixed-tl {
+  position:fixed;
+  top:0;left:0;
+}
+.rel {
+  position:relative;
+}
+.transition-ease {
+  -webkit-transition: all 1.4s ease;
+  -moz-transition: all 1.4s ease;
+  -o-transition: all 1.4s ease;
+  transition: all 1.4s ease;
+}
+
+.hide-animatable {
+  opacity: 0;
+}
+
+.w100 {
+  width: 100%;
+}
+.w50 {
+  width: auto;
+  max-width: 50%;
+}
+.half-height {
+  height: 50%;
+}
+.full-height {
+  min-height: 100%;
+}
+.full-height-force {
+  height: 100%;
+}
+.full-height-force.has-app-bar {
+  height: calc(100% - 64px);
+}
+
+
+.v-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%); /* IE 9 */
+  -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
+}
+.flex-center-container {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-image {
+  z-index:0;
+  background: url('/images/Background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.logo-container {
+
+}
+.logo-container img {
+  width:100%;
+  max-width: 280px;
+}
+.logo-container.fixed-tl.do-animate {
+  top: 2px !important;
+
+  &.done-moving {
+    width: 100%;
+    left: 0!important;
+  }
+  &.done-moving > img {
+      transform:scale(0.6);
+      /*width: auto!important;
+      height: auto!important;*/
+  }
+}
+
+
+.d-h1, .d-h2, .d-h3, .d-h4, .d-h5 {
+  width: 100%;
+  overflow: hidden;
+}
+.d-h1 {
+
+  letter-spacing: 0.18em;
+}
+.d-h2 {
+
+}
+.d-h3 {
+
+}
+.big-letter-spacing {
+  letter-spacing: 0.25em;
+}
+.scaletext-wrapper {
+  overflow: initial!important;
+}
+.scaletext-wrapper > span {
+  text-align:center;
+}
+.margin-auto-x {
+  margin: 0 auto;
+}
+.tcenter {
+  text-align: center;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  & > span { // LoginForm wraps the whole thing in a span apparently.
+    height: 100%;
+  }
+
+  // section.main is used to define an area that does NOT utilize the height:100% full page viewport.  (any new pages should utilize it at a ROOT level)
+  // this allows us to specify an offset (aka for the logo image in photoshop design that floats at the top, without affecting percentage heights causing overflow)
+  // but it by default doesn't have a width, and inherits the children width. So lets make it fit full screen, so we can utilize our Flex Grid classes within it properly..
+  section.main {
+    width: 100%;
+  }
+}
+form {
+  width: 100%;
+}
+
+.child-w100 {
+  & > * {
+    width: 100%;
+  }
+}
+
+form.accounts, .login-form {
+  .textField {
+    margin-bottom: 10px;
+
+    label {
+      margin-left: 22px;
+      & + div {
+        left: 22px !important;
+      }
+    }
+    input {
+      & + div {
+        hr {
+          width: 97%!important;
+          left: 7px!important;
+          bottom: -2px!important;
+        }
+      }
+    }
+    & + br {
+      display: none;
+    }
+  }
+  .buttons {
+    margin-top: 12px;
+    width: 100%;
+    & > div {
+      width: 100%;
+      margin-bottom: 20px;
+
+      &.active {
+        button {
+          background-color: #f97a66!important;
+          & > div {
+            & > div {
+              & > span {
+                color: white!important;
+              }
+            }
+          }
+        }
+      }
+      &.basic-clear {
+        background-color: transparent!important;
+        & > button {
+          border: solid 1px white !important;
+          background-color: transparent !important;
+          color: white !important;
+        }
+      }
+
+      button {
+        border-radius: 6px;
+        min-height: 60px;
+
+        & > div {
+          height: 100%;
+          & > div {
+            height: 100% !important;
+            width: 100%;
+            & > span {
+              height: 100%!important;
+              color: white!important;
+              font-size: 16pt!important;
+              line-height: 56px !important;
+            }
+          }
+        }
+        & span {
+          text-transform: inherit !important;
+        }
+      }
+    }
+
+    button {
+      width: 100% !important;
+
+      & > div {
+        & span {
+          font-weight: bold;
+          text-transform: inherit !important;
+          font-size: 14pt !important;
+        }
+      }
+      &.switchToPasswordReset, &.switchToSignUp {
+        & > div span {
+          font-weight: normal;
+        }
+      }
+
+      &.switchToPasswordReset {
+        color: #03b3d1 !important;
+        &:hover,&:focus {
+          color: #08a2d1 !important;
+        }
+        span {
+          font-size: 12pt !important;
+        }
+      }
+    }
+  }
+}
+a[href] {
+  text-decoration: none;
+}
+
+input[type=text], input[type=email], input[type=password] {
+  background-color: rgba(255,255,255,0.18) !important;
+  border-radius: 6px;
+  padding: 6px 8px !important;
+  height: auto!important;
+  min-height: 60px;
+  &::placeholder {
+    color: white;
+  }
+}
+.Home {
+  input[type=text] {
+    min-height: 40px;
+  }
+}
+form div.textField {
+  input[type=text], input[type=email], input[type=password]{
+    padding-top: 12px!important;
+    padding-left: 22px !important;
+    font-size: 14pt !important;
+  }
+}
+
+.c-grey {
+  color: grey;
+}
+
+.c-secondary {
+  color: #f97a66;
+}
+a.c-secondary {
+  font-weight: bold;
+  &:hover,&:focus {
+    color: #f96357;
+  }
+}
+a.c-tertiary {
+  color: #03b3d1;
+  &:hover,&:focus {
+    color: #08a2d1;
+  }
+}
+
+.step-group {
+
+  .step {
+    display: inline-block;
+    margin: 2px 7px;
+    background-color: rgba(100,100,100,0.7);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+
+    &.step-done {
+      background-color: #f97a66;
+    }
+  }
+}

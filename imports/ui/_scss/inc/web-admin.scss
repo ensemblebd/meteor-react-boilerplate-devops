@@ -1,0 +1,61 @@
+
+.is-desktop {
+
+  .app-bar {
+
+  }
+
+  .RaisedButton {
+    margin-right: 6px;
+  }
+
+  div.textField {
+    input[type=text], input[type=email], input[type=password] {
+      padding-top: 12px !important;
+      padding-left: 22px !important;
+      font-size: 14pt !important;
+    }
+  }
+  input[type=text], input[type=email], input[type=password] {
+    background-color: rgba(255, 255, 255, 0.18) !important;
+    border-radius: 6px;
+    padding: 6px 8px !important;
+    height: auto !important;
+    min-height: 60px;
+    &::placeholder {
+      color: white;
+    }
+  }
+  .standard-form-container {
+    .textField {
+      margin-bottom: 10px;
+
+      label {
+        margin-left: 22px;
+        & + div {
+          left: 22px !important;
+        }
+      }
+      input {
+        & + div {
+          hr {
+            width: 97% !important;
+            left: 7px !important;
+            bottom: -2px !important;
+          }
+        }
+      }
+      & + br {
+        display: none;
+      }
+    }
+  }
+
+  table tr.selected {
+    td {
+      background-color: #f97a66 !important;
+    }
+
+  }
+
+}

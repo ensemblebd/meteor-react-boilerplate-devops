@@ -1,0 +1,18 @@
+{
+  "public": {
+    "this_is_available_to_client": 1,
+    "BACKEND_URL": "http://clientwebsite.com:3000"
+  },
+  "private": {
+    "onlyavailable_on_server": 1
+  },
+  "galaxy.meteor.com": {
+	"env": {
+		"MONGO_URL": "mongodb://dbadmin:123456password789@abc-t512-1-def.mongodb.net/test",
+		"ROOT_URL": "sampleapp.mycompany.com",
+		"MAIL_URL": "smtp://a1855740-8faa-497c-a34b-308a04d3d23a:a1855740-8faa-497c-a34b-308a04d3d23a@smtp.postmarkapp.com:587",
+		"todo": "https://www.apollographql.com/docs/engine/setup-node.html?_ga=",
+		"todo_OPTICS_API_KEY": "service:my-company-n1:WaSDv11exij12n7dt-xxW_Q"
+	}
+  }
+}

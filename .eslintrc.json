@@ -1,0 +1,18 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "semi": 2
+  },
+  "env": {
+    "meteor": true,
+    "node": true,
+    "mongo": true,
+    "es6": true
+  }
+}
